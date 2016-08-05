@@ -14,15 +14,15 @@
   </thead>
 
   <tbody>
-    <% @items.each do |item| %>
+    <% @items.each do |a| %>
       <tr>
-        <td><%= item.name %></td>
-        <td><%= item.description %></td>
-        <td><%= item.armor_photo %></td>
-        <td><%= item.user %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= a.name %></td>
+        <td><%= a.description %></td>
+        <td><%= image_tag a.item_image.url %></td>
+        <td><%= a.user.username %></td>
+        <td><%= link_to 'Show', a %></td>
+        <td><%= link_to 'Edit', edit_a_path(a) %></td>
+        <td><%= link_to 'Destroy', a, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

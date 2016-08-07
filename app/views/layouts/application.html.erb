@@ -6,24 +6,52 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- montserrat alternates -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat+Alternates:700,400' rel='stylesheet' type='text/css'>
+    <!-- montserrat -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
+    <header>
+      <nav>
+      <a href='/'><h1 class="title">Arkea</h1></a>
+        <div class="links">
+          <div class="link">
+            <p><%= link_to "Armor", items_path %></p>
+          </div>
+          <div class="link">
+            <p><%= link_to "Users", users_path %></p>
+          </div>
+          <div class="link">
+            <p><%= link_to "Categories", categories_path %></p>
+          </div>
+        <% if current_user %>
+          <div class="link">
+            <p><%= link_to current_user.full_name, user_path(current_user) %></p>
+          </div>
+          <div class="link">
+            <p><%= link_to "Edit Profile", edit_user_registration_path %></p>
+          </div>
+          <div class="link">
+            <p><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>
+          </div>
+          <div class="link">
+            <p><a href="#">Cart</a></p>
+          </div>
+        <% else %>
+           <div class="link">
+            <p><%= link_to "Sign In", new_user_session_path %></p>
+          </div>
+           <div class="link">
+            <p><%= link_to "Register", new_user_registration_path %></p>
+           </div>
+        <% end %>
+        </div>
+      </nav>
+    </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class='login'>
-      <ul>
-      <% if current_user %>
-        <li><%= link_to current_user.full_name, user_path(current_user) %></li>
-        <li><%= current_user.email %></li>
-        <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-        <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-      <% else %>
-         <li><%= link_to "Sign In", new_user_session_path %></li>
-         <li><%= link_to "Register", new_user_registration_path %></li>
-      <% end %>
-      </ul>
-    </div>
     <%= yield %>
   </body>
 </html>

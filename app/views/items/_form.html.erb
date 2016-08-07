@@ -24,7 +24,11 @@
   <div class="field">
      <%= f.label :item_image %><br />
      <%= f.file_field :item_image %>
-   </div>
+  </div>
+
+  <fieldset>
+      <%= collection_check_boxes(:item, :category_ids, Category.all, :id, :name) %>
+  </fieldset>
 
   <div class="actions">
     <%= f.submit %>

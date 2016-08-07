@@ -1,0 +1,24 @@
+<div class="promo">
+  <div class="promo-words">
+    armor for any situation<br>
+    <p class="changing-promo">Fast</p>
+  </div>
+  <div class="forward"> 
+  </div>
+  <div class="backward">
+  </div>
+  <div class="recently-posted">
+    <p>Recently Posted</p>
+  </div>
+</div>
+
+<div class="recent">
+  <% @items.each do |item| %>
+  <a href="items/<%= item.id %>">
+    <div class="recent-photo">
+      <%= image_tag item.item_image.url %>
+    </div>
+  </a>
+  <% end %>
+</div>
+

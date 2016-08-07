@@ -1,0 +1,140 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+  font-family: montserrat;
+  background-color: #0D279D;
+}
+
+header{
+  nav{
+    height: 60px;
+    width: 100vw;
+    background-color: #3F56C3;
+    .title{
+      position: absolute;
+      padding: 5px 0 0 20px;
+      font-size: 50px;
+      font-family: montserrat alternates;
+      font-weight: 700;
+      color: #F2F2F2;
+    }
+    .links{
+      height: 60px;
+      width: 70vw;
+      float: right;
+      background-color: #1735ff;
+      display:flex;
+      .link{
+        background-color: #1735C2;
+        display: inline;
+        float: right;
+        flex: 1;
+        border-right: 2px solid #1735ff;
+        text-align: center;
+        vertical-align: middle;
+        p{
+         padding: 22px 5px;
+         color: white;
+          a{
+            color: #F2F2F2;
+            &:hover{
+              color: darken(white, 20%)
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.promo{
+  width: 100vw;
+  height: 500px;
+  background-image: url(promo-photo1.png);
+  background-size: cover;
+  .promo-words{
+    font-family: montserrat;
+    margin: 20px;
+    font-size: 50px;
+    position: absolute;
+    width: 580px;
+    .changing-promo{
+      font-size: 30px;
+      font-weight: 700;
+      float: right;
+      margin: 0 40px 0 0;
+    }
+  }
+  .forward{
+    background-image: url(forward.png);
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    position:relative;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  .backward{
+    background-image: url(backward.png);
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: 50%;
+    float: right;
+    transform: translateY(-150%);
+    cursor: pointer;
+  }
+  .recently-posted{
+    position: relative;
+    top: 82%;
+    float: right;
+    font-size: 30px;
+    background-color: #0D279D;
+    height: 40px;
+    p{
+      padding: 5px 5px 0 5px;
+    } 
+  }
+}
+
+
+.recent{
+  max-width: 100vw;
+  height: 310px;
+  white-space: nowrap;
+  overflow-x:auto;
+  .recent-photo{
+    margin: 5px 2px 0 4px;
+    display: inline-block;
+    width: 230px;
+    height: 300px;
+    background-color: white;
+    border: 4px solid #051561;
+    border-radius: 16px;
+    img{
+      display: block;
+      margin:auto;
+      max-width: 100%;
+      max-height: 100%;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

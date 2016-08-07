@@ -1,9 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Categories</h1>
-
-<% @categories.each do |category| %>
-  <h2><%= category.name %></h2>
-  <p><%= link_to 'Show', category %></p>
-<% end %>
+<div class="row">
+  <% @categories.each do |category| %>
+    <div class="medium-3 columns dummy">
+      <div class="panel categories">
+        <%= link_to category.name, category, class: "category" %>
+      </div>
+    </div>
+  <% end %>
+</div>
 

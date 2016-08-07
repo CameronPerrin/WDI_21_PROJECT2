@@ -17,35 +17,17 @@
       <nav>
       <a href='/'><h1 class="title">Arkea</h1></a>
         <div class="links">
-          <div class="link">
-            <p><%= link_to "Armor", items_path %></p>
-          </div>
-          <div class="link">
-            <p><%= link_to "Users", users_path %></p>
-          </div>
-          <div class="link">
-            <p><%= link_to "Categories", categories_path %></p>
-          </div>
+          <%= link_to "Armor", items_path, class: "link" %>              
+          <%= link_to "Users", users_path, class: "link" %>
+          <%= link_to "Categories", categories_path, class: "link" %>
         <% if current_user %>
-          <div class="link">
-            <p><%= link_to current_user.full_name, user_path(current_user) %></p>
-          </div>
-          <div class="link">
-            <p><%= link_to "Edit Profile", edit_user_registration_path %></p>
-          </div>
-          <div class="link">
-            <p><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>
-          </div>
-          <div class="link">
-            <p><a href="#">Cart</a></p>
-          </div>
+          <%= link_to current_user.full_name, user_path(current_user), class: "link" %>
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "link" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "link" %>
+          <%= link_to "Cart", "#", class: "link" %>
         <% else %>
-           <div class="link">
-            <p><%= link_to "Sign In", new_user_session_path %></p>
-          </div>
-           <div class="link">
-            <p><%= link_to "Register", new_user_registration_path %></p>
-           </div>
+          <%= link_to "Sign In", new_user_session_path, class: "link" %>
+          <%= link_to "Register", new_user_registration_path, class: "link" %>
         <% end %>
         </div>
       </nav>

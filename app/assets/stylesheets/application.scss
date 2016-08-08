@@ -183,7 +183,9 @@ header{
     left: 0;
     width: 50%;
     text-align: center;
+    z-index: 5;
     a{
+      padding: 5px;
       color: #F2F2F2;
     }
   }

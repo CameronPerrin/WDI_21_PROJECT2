@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :protect!, only: [:edit, :create, :update, :destroy]
   before_filter :authenticate_user!, except: [:index, :show]
+
   # GET /items
   # GET /items.json
   def index
@@ -65,6 +67,12 @@ class ItemsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
+    end
+
+    def protect!
+      if !(user_signed_in? && (current_user == @item.user))
+        redirect_to @item
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

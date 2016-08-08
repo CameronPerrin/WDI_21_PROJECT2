@@ -4,25 +4,25 @@
 <div class="row">
   <% @items.each do |item| %>
 
-
+  
     <div class="medium-6 large-4 columns">
       <div class="panel items">
         <div class="item-name"><%= item.name %></div>
         <div class="item-description"><%= item.description %></div>
         <% if current_user == item.user %>
           <div class="item-options">
-            <%= link_to 'Show', item %>
             <%= link_to 'Edit', edit_item_path(item) %>
             <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are   you sure?' } %>
           </div>
         <% end %>
-        <%= image_tag item.item_image.url %>
+          <%= link_to item do %>
+            <%= image_tag item.item_image.url %>
+          <% end %>
         <br>
         <div class="item-categories">
           <%= render item.categories %>
         </div>
       </div>
     </div>
-
   <% end %>
 </div>

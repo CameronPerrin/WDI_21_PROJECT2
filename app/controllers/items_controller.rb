@@ -1,17 +1,31 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :protect!, only: [:edit, :create, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :add_to_wishlist, :add_to_cart, :destroy]
+  before_action :protect!, only: [:edit, :update, :destroy]
   before_filter :authenticate_user!, except: [:index, :show]
 
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = Item.all.sort { |a,b| b.created_at <=> a.created_at }
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
+    # @wishlist = Wishlist.new
+
+  end
+
+  def add_to_wishlist()
+    Wishlist.create(user_id: current_user.id, item_id: @item.id)
+    redirect_to @item
+    flash[:notice] = "Added to wishlist"
+  end
+
+  def add_to_cart()
+    Cart.create(user_id: current_user.id, item_id: @item.id)
+    redirect_to @item
+    flash[:notice] = "Added to cart"
   end
 
   # GET /items/new

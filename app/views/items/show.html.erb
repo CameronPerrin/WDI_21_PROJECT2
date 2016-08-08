@@ -1,30 +1,40 @@
-
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
-
-<p>
-  <strong>Image:</strong>
+<div class="item-image-show">
   <%= image_tag @item.item_image.url %>
-</p>
+  <div class="price-show">
+    <div></div>
+    <p>50000$</p>
+  </div>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @item.user.username %>
-</p>
+<div class="info-show">
+  <div class="item-name-show">
+    <%= @item.name %>
+  </div>
+  <div class="item-description-show">
+    <%= @item.description %>
+  </div>
 
-<p>
-  <strong>Categories:</strong>
-  <br>
-  <%= render @item.categories %>
-</p>
 
+  <div class="item-categories-show">
+    Categories:<br>
+    <%= render @item.categories %>
+  </div>
+</div>
+
+<%= link_to(add_to_wishlist_item_path, method: :post) do %>
+  <div class="wishlist-add">
+    Add to Wishlist
+  </div>
+<% end %>
+
+<%= link_to(add_to_cart_item_path, method: :post) do %>
+  <div class="cart-add">
+    Add to Cart
+  </div>
+<% end %>
+<%= link_to @item.user do %>
+  <%= image_tag @item.user.user_image.thumb.url, class: "item-user_image-show" %>
+<% end %>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

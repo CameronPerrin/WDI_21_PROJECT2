@@ -1,3 +1,81 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.promo{
+  width: 100vw;
+  height: 500px;
+  background-image: url(promo-photo1.png);
+  background-size: cover;
+  .promo-words{
+    font-family: montserrat;
+    margin: 20px;
+    font-size: 50px;
+    position: absolute;
+    width: 580px;
+    .changing-promo{
+      font-size: 30px;
+      font-weight: 700;
+      float: right;
+      margin: 0 40px 0 0;
+    }
+  }
+  .forward{
+    background-image: url(forward.png);
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    position:relative;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  .backward{
+    background-image: url(backward.png);
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: 50%;
+    float: right;
+    transform: translateY(-150%);
+    cursor: pointer;
+  }
+  .recently-posted{
+    position: relative;
+    top: 82%;
+    float: right;
+    font-size: 30px;
+    background-color: #0D279D;
+    height: 40px;
+    p{
+      padding: 5px 5px 0 5px;
+    } 
+  }
+}
+
+//home's recent tab
+.recent{
+  max-width: 100vw;
+  height: 320px;
+  white-space: nowrap;
+  overflow-x:auto;
+  .recent-photo{
+    margin: 8px 2px 0 8px;
+    display: inline-block;
+    width: 230px;
+    height: 300px;
+    background-color: #b1bbe7;
+    border: 4px solid #051561;
+    box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.2);
+    img{
+      display: block;
+      margin:auto;
+      max-width: 100%;
+      max-height: 100%;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

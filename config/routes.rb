@@ -5,8 +5,18 @@ Rails.application.routes.draw do
   get 'static_pages/info'
 
   devise_for :users
-  resources :items
+  resources :items do 
+    member do
+      post :add_to_wishlist
+      put :add_to_wishlist
+      post :add_to_cart
+      put :add_to_cart
+    end
+  end
+  resources :wishlists
+  resources :carts
   root to: "static_pages#home"
+
 
   get '/users', to: 'users#index'
   get '/users/:id', to: 'users#show', as: 'user'

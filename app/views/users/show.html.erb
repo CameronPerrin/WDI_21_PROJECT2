@@ -13,17 +13,27 @@
 
 <div class="wishlist-show">
   <div class="wishlist-title">Wishlist</div>
-  <% @user.wishlists.each do |wishlist| %>
-    <div class="wishlist-container">
-      <div class="wishlist-description">
-        <%= wishlist.item.description %>
+  <div class="wishlist-all-container">
+    <% @user.wishlists.each do |wishlist| %>
+      <div class="wishlist-container">
+        <div class="wishlist-description">
+          <p><%= wishlist.item.description %></p>
+          <%= link_to wishlist.item do %>
+            <div class="read-more">
+              <p>read more...</p>
+            </div>
+          <% end %>
+        </div>
+        <div class="wishlist-image">
+          <%= link_to wishlist.item do %>
+            <%= image_tag wishlist.item.item_image.small.url %>
+          <% end %>
+        </div>
       </div>
-      <div class="wishlist-image">
-        <%= image_tag wishlist.item.item_image.small.url %>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
+
 
 <p class="user-time-show">
   Account created on: <%= @user.created_at.strftime("%d %b. %Y") %>  

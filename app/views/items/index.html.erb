@@ -1,5 +1,9 @@
-
-<%= link_to 'New Item', new_item_path %>
+<div class="new-item">
+  <%= link_to 'New Item', new_item_path %>
+</div>
+<div class="search-box">
+  <input name="filter" placeholder="search" class="search-items">
+</div>
 <br>
 <div class="row">
   <% @items.each do |item| %>

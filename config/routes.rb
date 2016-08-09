@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   resources :categories
+  
   get 'static_pages/home'
 
   get 'static_pages/info'
+
+  get 'static_pages/cart'
 
   devise_for :users
   resources :items do 

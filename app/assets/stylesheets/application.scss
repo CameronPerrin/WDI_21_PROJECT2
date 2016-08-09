@@ -14,6 +14,9 @@
  *= require_self
  */
 
+ ::-webkit-scrollbar { 
+     display: none; 
+ }
 
 body{
   font-family: montserrat;
@@ -33,12 +36,54 @@ header{
       font-weight: 700;
       color: #F2F2F2;
     }
+    .hamburger{
+      @media screen and (min-width: 750px) {
+        display: none;
+      }
+      height: 60px;
+      width: 60px;
+      background-color: #1735C2;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 40px;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+    .menu{
+      height: 91.4vh;
+      width: 320px;
+      position: absolute;
+      right: 0;
+      top:60px;
+      z-index: 99999999;
+      background-color: orange;
+      overflow-y: auto;
+      .link{
+        display: block;
+        height: 75px;
+        width: 100%;
+        text-align: right;
+        display: flex;
+        background-color: #1735C2;
+        justify-content: center;
+        flex-direction: column;
+        border: 1px solid black;
+        color: #F2F2F2;
+      }
+    }
     .links{
       height: 60px;
       width: 70vw;
       float: right;
-      background-color: #1735ff;
       display: flex;
+      @media screen and (max-width: 750px) {
+        display: none;
+      }
       .link{
         background-color: #1735C2;
         display: flex;

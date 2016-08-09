@@ -81,9 +81,28 @@ $(".backward").on("click", function(){
 
 
 
+$( ".menu" ).hide();
+$( ".hamburger" ).click(function() {
+  $( ".menu" ).slideToggle( "fast", function() {
+  });
+});
+
+var $items = $(".items")
+
+$(".search-items").on('keyup', function(){
+  var input = this;
+  $items.each(function() {
+    var userInput = $(this).text().toLowerCase()
+    var itemTitle = $(input).val().toLowerCase()
 
 
-
+    if(userInput.match(itemTitle)){
+      $(this).show()
+    } else {
+      $(this).hide()
+    }
+  })
+})
 
 
 

@@ -30,33 +30,57 @@
   width: 35%;
   overflow-y: auto;
   .wishlist-title{
-    width: 100%;
+    width: 35%;
     height: 30px;
     text-align: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: orange;
+    background-color: #091E7F;
+    color: #F2F2F2;
+    position: fixed;
+    z-index: 10;
   }
-  .wishlist-container{
-    height: 170px;
-    width: 100%;
-    display: flex;
-    background-color: red;
-    .wishlist-image{
-      width: 60px;
-      margin: 2.5% 2.5% 2.5% 0;
-      background-color: blue;
-    }
-    .wishlist-description{
-      flex:1;
-      margin: 2.5%;
-      background-color: blue;
-      overflow-y: hidden;
+  .wishlist-all-container{
+    margin-top: 30px;
+    .wishlist-container{
+      height: 170px;
+      width: 100%;
+      display: flex;
+      background-color: #1735C2;
+      .wishlist-image{
+        width: 60px;
+        margin: 2.5% 2.5% 2.5% 0;
+        background-color: #3F56C3;
+        box-shadow: 2px 4px 0px 0px rgba(0,0,0,0.2);
+      }
+      .wishlist-description{
+        flex:1;
+        margin: 2.5%;
+        overflow-y: hidden;
+        color: #F2F2F2;
+        padding: 2.5%;
+        background-color: #3F56C3;
+        box-shadow: 2px 4px 0px 0px rgba(0,0,0,0.2);
+        position: relative;
+        .read-more{
+          position: absolute; 
+          bottom: 0; 
+          left: 0;
+          width: 100%; 
+          text-align: center;
+          padding: 25px 0 0 0; 
+          font-weight: 700;
+          color: black;
+          background-image: linear-gradient(
+            rgba(63, 86, 195,0.5) 0%,
+            rgba(63, 86, 195,1) 100%
+            );
+        }
+      }
     }
   }
 }
-
 .user-time-show{
   color: lighten(black, 12.5%);
   font-size: 12px;

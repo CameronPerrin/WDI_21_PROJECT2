@@ -22,6 +22,11 @@ class ItemsController < ApplicationController
     flash[:notice] = "Added to wishlist"
   end
 
+  # def remove_from_wishlist()
+  #   Wishlist.first.destroy
+  #   redirect_to @item
+  # end
+
   def add_to_cart()
     Cart.create(user_id: current_user.id, item_id: @item.id)
     redirect_to @item

@@ -1,0 +1,26 @@
+<div class="cart-show">
+  <div class="cart-title">cart</div>
+  <div class="cart-all-container">
+    <% current_user.carts.each do |cart| %>
+      <div class="cart-container">
+        <div class="cart-description">
+          <p><%= cart.item.description %></p>
+          <%= link_to cart.item do %>
+            <div class="read-more">
+              <p>read more...</p>
+            </div>
+          <% end %>
+         
+            <div class="cart-destroy">
+            </div>
+        
+        </div>
+        <div class="cart-image">
+          <%= link_to cart.item do %>
+            <%= image_tag cart.item.item_image.small.url %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

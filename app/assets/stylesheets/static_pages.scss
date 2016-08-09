@@ -5,14 +5,15 @@
 .promo{
   width: 100vw;
   height: 500px;
-  background-image: url(promo-photo1.png);
   background-size: cover;
+  position:relative;
   .promo-words{
     font-family: montserrat;
     margin: 20px;
     font-size: 50px;
     position: absolute;
     width: 580px;
+    color: lighten(#3F56C3, 15%);
     .changing-promo{
       font-size: 30px;
       font-weight: 700;
@@ -22,28 +23,31 @@
   }
   .forward{
     background-image: url(forward.png);
-    background-size: cover;
-    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
     width: 50px;
-    position:relative;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
+    left: 0;
+    position: absolute;
     cursor: pointer;
   }
   .backward{
     background-image: url(backward.png);
-    background-size: cover;
-    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
     width: 50px;
-    position: relative;
-    top: 50%;
-    float: right;
-    transform: translateY(-150%);
+    top: 0;
+    right: 0;
+    position: absolute;
     cursor: pointer;
   }
   .recently-posted{
     position: relative;
-    top: 82%;
+    top: 92%;
     float: right;
     font-size: 30px;
     background-color: #0D279D;

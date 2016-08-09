@@ -1,5 +1,30 @@
-<h1><%= @user.full_name %></h1>
-<%= image_tag @user.user_image.url %><br>
-<%= @user.username %><br>
-<%= @user.email %><br>
-<%= @user.created_at.strftime("%d %b. %Y") %><br>
+<%= image_tag @user.user_image.detail.url, class: "user-image-show" %><br>
+<div class="profile-info-show">
+  <%= @user.full_name %>
+</div>
+
+<div class="profile-info-show">
+  <%= @user.email %>
+</div>
+
+<div class="profile-info-show">
+  <%= @user.username %>
+</div>
+
+<div class="wishlist-show">
+  <div class="wishlist-title">Wishlist</div>
+  <% @user.wishlists.each do |wishlist| %>
+    <div class="wishlist-container">
+      <div class="wishlist-description">
+        <%= wishlist.item.description %>
+      </div>
+      <div class="wishlist-image">
+        <%= image_tag wishlist.item.item_image.small.url %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<p class="user-time-show">
+  Account created on: <%= @user.created_at.strftime("%d %b. %Y") %>  
+</p>

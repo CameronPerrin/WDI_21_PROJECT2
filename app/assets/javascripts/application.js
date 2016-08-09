@@ -18,24 +18,77 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 console.log("JS loaded");
 
-// var wishlist = document.getElementById("wishlist-add");
-// wishlist.addEventListener("click", function(){
-//   this.innerHTML = ('<%= Wishlist.create(user_id: current_user.id, item_id: @item.id) %>');
-//   return this.innerHTML.firstChild;
-// });
+function shake(div){
+    var interval = 100;
+    var distance = 10;
+    var times = 4;
+    $(div).css('position','relative');
+    for(var iter=0;iter<(times+1);iter++){                            
+        $(div).animate({ 
+            left:((iter%2==0 ? distance : distance*-1))
+            },interval);                                   
+    }                                           
+    $(div).animate({ left: 0},interval);                            
+}
+
+function promoChangeWord(){
+  if(photoNum === 1) {
+    $(".changing-promo").html('Fast');
+  } else if(photoNum === 2) {
+    $(".changing-promo").html('Reliable');
+  } else if(photoNum === 3) {
+    $(".changing-promo").html('Friendly');
+  };
+};
+
+var photoNum = 3
+
+$(".promo").css("background-image", "url(assets/promo-photo"+photoNum+".png)");
+promoChangeWord()
 
 
-$("#wishlist-add").on("click", function(){
-//   $(this).replaceWith($("<% Wishlist.create(user_id: current_user.id, item_id: @item.id) %>"))
-  // var erb = <%= Wishlist.create(user_id: current_user.id, item_id: @item.id) %>;
-  // $(this).html(erb);
-
-//   $(this).load(document.URL +  ' #wishlist-change');
 
 
+$(".forward").on("click", function(){
+  if(photoNum > 2){
+    shake($(".promo"));
+  } else {
+  photoNum++
+  $(".promo").css("background-image", "url(assets/promo-photo"+photoNum+".png)");
+  $(".changing-promo").fadeOut('slow');
+  setTimeout(function(){
+    promoChangeWord()
+  }, 600);
+  $(".changing-promo").fadeIn('slow');
+  }
 });
 
-// $('#wishlist-add').html = '<% Wishlist.create(user_id: current_user.id, item_id: @item.id) %>'
+
+
+$(".backward").on("click", function(){
+  if(photoNum < 2){
+    shake($(".promo"));
+  } else {
+    photoNum--
+    $(".promo").css("background-image", "url(assets/promo-photo"+photoNum+".png)");
+    $(".changing-promo").fadeOut('slow');
+    setTimeout(function(){
+      promoChangeWord()
+    }, 600);
+    $(".changing-promo").fadeIn('slow');
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 

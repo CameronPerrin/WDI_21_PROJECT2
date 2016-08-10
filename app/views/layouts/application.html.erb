@@ -32,14 +32,20 @@
 
     <% if notice %>
       <div class="notice">
-      <%= notice %>
-        <div class="exit">x</div>
+        <%= notice %>
+        <div class="exit">
+          x
+        </div>
       </div>
     <% end %>
 
     <% if alert %>
-      <div class="alert"><%= alert %></div>
-      <div class="exit">x</div>
+      <div class="alert">
+        <%= alert %>
+        <div class="exit">
+          x
+        </div>
+      </div>
     <% end %>
 
     <%= yield %>

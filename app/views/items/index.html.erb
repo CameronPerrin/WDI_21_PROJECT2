@@ -22,7 +22,11 @@
           </div>
         <% end %>
           <%= link_to item do %>
-            <%= image_tag (item.item_image.thumb.url) %>
+            <% if !item.item_image.blank? %>
+              <%= image_tag item.item_image.url %>
+            <% else %>
+              <p class="no-image">no image available</p>
+            <% end %>
           <% end %>
         <br>
         <div class="item-categories">

@@ -1,5 +1,9 @@
 <div class="item-image-show">
-  <%= image_tag @item.item_image.url %>
+  <% if !@item.item_image.blank? %>
+    <%= image_tag @item.item_image.url %>
+  <% else %>
+    <p class="no-image">no image available</p>
+  <% end %>
   <div class="price-show">
     <div></div>
     <p>$<%= @item.cost %></p>

@@ -11,27 +11,24 @@
     </div>
   <% end %>
 
+<div class="new-box">
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: "Armor Name", class: "make-armor-name" %>
   </div>
 
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, placeholder: "Armor Description", class: "make-armor-description" %>
   </div>
 
   <div class="field">
-     <%= f.label :item_image %><br />
-     <%= f.file_field :item_image %>
+     <%= f.file_field :item_image, class: "make-armor-image" %>
   </div>
 
   <div class="field">
-     <%= f.label :cost %><br />
-     <%= f.number_field :cost, :step => 'any' %>
+     <%= f.number_field :cost, :step => 'any', placeholder: "Armor Price", class: "make-armor-cost" %>
   </div>
 
-  <fieldset>
+  <fieldset class="make-armor-category">
       <%= collection_check_boxes(:item, :category_ids, Category.all, :id, :name) %>
   </fieldset>
 
@@ -39,3 +36,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>

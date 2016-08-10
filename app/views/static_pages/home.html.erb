@@ -16,7 +16,9 @@
   <% @items.each do |item| %>
   <a href="items/<%= item.id %>">
     <div class="recent-photo">
-      <%= image_tag item.item_image.url %>
+      <% if !item.item_image.blank? %>
+        <%= image_tag item.item_image.url %>
+      <% end %>
     </div>
   </a>
   <% end %>

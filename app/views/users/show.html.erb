@@ -1,4 +1,11 @@
-<%= image_tag @user.user_image.detail.url, class: "user-image-show" %><br>
+<% if !@user.user_image.blank? %>
+  <%= image_tag @user.user_image.detail.url, class: "user-image-show" %>
+<% else %>
+  <div class="no-user-image">
+    <p>This user has not uploaded an image</p>
+  </div>
+<% end %>
+<br>
 <div class="profile-info-show">
   <%= @user.full_name %>
 </div>

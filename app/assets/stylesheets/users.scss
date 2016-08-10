@@ -88,3 +88,133 @@
   right: 10px;
   bottom: 2px;
 }
+
+.register-title{
+  text-align: center;
+  font-size: 50px;
+  font-family: montserrat alternates;
+  color: white;
+  padding: 10px 0 15px 0;
+}
+
+.register-box{
+  position: absolute;
+  left: 50%;
+  margin-left: -20%;
+  width: 40%;
+  padding: 5px 0 25px 0;
+  background-color: #3F56C3;
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.2);
+  text-align: center;
+  @media screen and (max-width: 800px) {
+    width: 70%;
+    margin-left: -35%;
+  }
+  .new_user{
+    .field{
+      input{
+        margin: 5% 10%;
+        width: 80%;
+        border-radius: 3px;
+        @media screen and (max-width: 800px) {
+        width: 90%;
+        margin: 5% 5%;
+        }
+      }
+      label{
+        font-size: 20px;
+        margin: 5px 0 -10px 0;
+      }
+      .field-box{
+        margin: 5% 10%;
+        width: 80%;
+        @media screen and (max-width: 800px) {
+        width: 90%;
+        margin: 5% 5%;
+        }
+      }
+      .sign-up{
+          border: 5px solid black;
+      }
+    }
+  }
+  .edit_user{
+    .field{
+      input{
+        margin: 5% 10%;
+        width: 80%;
+        border-radius: 3px;
+        @media screen and (max-width: 800px) {
+        width: 90%;
+        margin: 5% 5%;
+        }
+      }
+      label{
+        font-size: 20px;
+        margin: 5px 0 -10px 0;
+      }
+      .field-box{
+        margin: 5% 10%;
+        width: 80%;
+        @media screen and (max-width: 800px) {
+        width: 90%;
+        margin: 5% 5%;
+        }
+      }
+      .sign-up{
+          border: 5px solid black;
+      }
+    }
+  }
+}
+
+.login-title{
+  text-align: center;
+  font-size: 50px;
+  font-family: montserrat alternates;
+  color: white;
+  padding: 10px 0 15px 0;
+}
+
+.under-login{
+  text-align: center;
+  margin-top: 350px;
+}
+
+.under-registration{
+  text-align: center;
+  margin-top: 500px;
+}
+
+.remember-me-box{
+  position:absolute;
+  left: 0;
+  bottom: 18%;
+}
+
+.remember-me-name{
+  padding: 0 0 30px 0;
+}
+
+.edit-user-title{
+  text-align: center;
+  font-size: 50px;
+  font-family: montserrat alternates;
+  color: white;
+  padding: 10px 0 15px 0;
+}
+
+.cancel-account{
+  margin-top: 20px;
+}
+
+.no-user-image{
+  height: 400px;
+  width: 400px;
+  border: 8px solid black;
+  border-radius: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

@@ -1,7 +1,15 @@
 <h1>Users</h1>
 <% @users.each do |user| %>
-  <%= link_to user do %>
-    <%= image_tag user.user_image.url %>
+  <% if !user.user_image.blank? %>
+    <%= link_to user do %>
+      <%= image_tag user.user_image.url %>
+    <% end %>
+  <% else %>
+    <%= link_to user do %>
+      <div class="no-user-image">
+        <p>This user has not uploaded an image</p>
+      </div>
+    <% end %>
   <% end %>
 
   <div class="full-name">

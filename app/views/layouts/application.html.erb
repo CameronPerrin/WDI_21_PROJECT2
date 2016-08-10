@@ -31,11 +31,15 @@
     </header>
 
     <% if notice %>
-      <div class="notice"><%= notice %></div>
+      <div class="notice">
+      <%= notice %>
+        <div class="exit">x</div>
+      </div>
     <% end %>
 
     <% if alert %>
       <div class="alert"><%= alert %></div>
+      <div class="exit">x</div>
     <% end %>
 
     <%= yield %>

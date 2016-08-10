@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 
 gem 'carrierwave', '0.10.0'
+gem 'fog', require: 'fog/aws'
 gem 'rmagick'
 gem 'devise', '~> 4.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

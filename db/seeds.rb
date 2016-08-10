@@ -6,10 +6,34 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require_relative "../app/models/cart.rb"
+require_relative "../app/models/category.rb"
+require_relative "../app/models/item.rb"
+require_relative "../app/models/user.rb"
+require_relative "../app/models/wishlist.rb"
+
 Category.create(name: "Futuristic")
 Category.create(name: "Medieval")
 Category.create(name: "Fantasy")
 Category.create(name: "Sexy")
 Category.create(name: "Mens")
 Category.create(name: "Womens")
-Category.create(name: "Miscellaneous")
+Category.create(name: "Misc.")
+Category.create(name: "Light")
+Category.create(name: "Medium")
+Category.create(name: "Heavy")
+Category.create(name: "Plate")
+Category.create(name: "Chain")
+Category.create(name: "Leather")
+Category.create(name: "Roman")
+Category.create(name: "Modern")
+Category.create(name: "Anti-Ballistic")
+Category.create(name: "Metallic")
+Category.create(name: "Electronic")
+Category.create(name: "Exoskeleton")
+Category.create(name: "Mech")
+Category.create(name: "Cloth")
+Category.create(name: "Plastic")
+Category.create(name: "Endo-Skeleton")
+Category.create(name: "Wood")
+

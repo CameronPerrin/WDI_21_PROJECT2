@@ -1,11 +1,13 @@
-<div class="new-item">
-  <%= link_to 'New Item', new_item_path %>
-</div>
+<%= link_to new_item_path do %>
+  <div class="new-item">
+    Sell Your Armor
+  </div>
+<% end %>
 <div class="search-box">
   <input name="filter" placeholder="search" class="search-items">
 </div>
-<br>
-<div class="row">
+
+<div class="row all-item-box">
   <% @items.each do |item| %>
 
   

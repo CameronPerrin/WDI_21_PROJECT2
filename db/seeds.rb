@@ -110,7 +110,7 @@ item3.categories << category22
 item3.categories << category21
 
 item4 = Item.create!(
-  name: "Brazilian Paper Armor",
+  name: "Spanish Paper Armor",
   user_id: 2,
   cost: 549.99,
   item_image: File.open(File.join(Rails.root, '/db/images/item_images/paper-armor.png')),

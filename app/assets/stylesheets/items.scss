@@ -35,6 +35,7 @@
     height: 90%;
     background-color: #7787d4;
     overflow-x: auto;
+    line-height: 18px;
   }
   .item-categories{
     position: absolute;
@@ -48,6 +49,7 @@
     flex-direction: column;
     background-color: #1735C2;
     overflow-y: hidden;
+    line-height: 18px;
   }
   .item-options{
     position: absolute;
@@ -173,6 +175,7 @@
     margin: 0 5%;
     overflow-x: auto;
     max-height: 85%;
+    line-height: 21px;
     @media screen and (max-width: 670px) {
       max-height: 78%;
     }

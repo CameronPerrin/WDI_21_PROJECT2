@@ -10,17 +10,30 @@
               <p>read more...</p>
             </div>
           <% end %>
-         
-            <div class="cart-destroy">
-            </div>
         
         </div>
         <div class="cart-image">
+        <% if !cart.item.item_image.blank? %>
           <%= link_to cart.item do %>
             <%= image_tag cart.item.item_image.small.url %>
           <% end %>
+        <% else %>
+          <p>no image</p>
+        <% end %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+<% @array = []%>
+<% @sum = 0 %>
+<p class="total-price">
+Total: 
+  <% current_user.carts.each do |cart| %>
+    <% @array << cart.item.cost if cart.item.cost != nil %>
+  <% end %>
+  <% @array.each { |a| @sum+=a } %>
+  $<%= @sum %>
+</p>
+
+

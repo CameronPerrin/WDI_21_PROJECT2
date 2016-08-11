@@ -32,9 +32,13 @@
           <% end %>
         </div>
         <div class="wishlist-image">
+        <% if !wishlist.item.item_image.blank? %>
           <%= link_to wishlist.item do %>
             <%= image_tag wishlist.item.item_image.small.url %>
           <% end %>
+        <% else %>
+          <p>no image</p>
+        <% end %>
         </div>
       </div>
     <% end %>

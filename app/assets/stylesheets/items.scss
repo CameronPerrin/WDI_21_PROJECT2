@@ -89,7 +89,7 @@
     top: 460px;
   }
   img{
-    max-height: 100%;
+    height: 100%;
     max-width: 100%;
   }
   .price-show{
@@ -272,6 +272,12 @@
   border: 4px solid #051561;
   box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.2);
   border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   @media screen and (max-width: 535px) {
     top: 1050px;
   }

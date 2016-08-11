@@ -37,7 +37,11 @@
   </div>
 <% end %>
 <%= link_to @item.user do %>
-  <%= image_tag @item.user.user_image.thumb.url, class: "item-user_image-show" %>
+  <% if !@item.user.user_image.blank? %>
+    <%= image_tag @item.user.user_image.thumb.url, class: "item-user_image-show" %>
+  <% else %>
+    <p class="item-user_image-show">no image available</p >
+  <% end %>
 <% end %>
 
 <% if current_user == @item.user %>

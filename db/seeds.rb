@@ -6,37 +6,35 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require_relative "../app/models/cart.rb"
-require_relative "../app/models/category.rb"
-require_relative "../app/models/item.rb"
-require_relative "../app/models/user.rb"
-require_relative "../app/models/wishlist.rb"
+["categories", "users", "items", "wishlists", "carts"].each do |table_name|
+  ActiveRecord::Base.connection.execute("TRUNCATE #{table_name} RESTART IDENTITY CASCADE")
+end
 
-category1 = Category.create(name: "Futuristic")
-category2 = Category.create(name: "Medieval")
-category3 = Category.create(name: "Fantasy")
-category4 = Category.create(name: "Sexy")
-category5 = Category.create(name: "Mens")
-category6 = Category.create(name: "Womens")
-category7 = Category.create(name: "Misc.")
-category8 = Category.create(name: "Light")
-category9 = Category.create(name: "Medium")
-category10 = Category.create(name: "Heavy")
-category11 = Category.create(name: "Plate")
-category12 = Category.create(name: "Chain")
-category13 = Category.create(name: "Leather")
-category14 = Category.create(name: "Roman")
-category15 = Category.create(name: "Modern")
-category16 = Category.create(name: "Anti-Ballistic")
-category17 = Category.create(name: "Metallic")
-category18 = Category.create(name: "Electronic")
-category19 = Category.create(name: "Exoskeleton")
-category20 = Category.create(name: "Mech")
-category21 = Category.create(name: "Cloth")
-category22 = Category.create(name: "Plastic")
-category23 = Category.create(name: "Wood")
+category1 = Category.create!(name: "Futuristic")
+category2 = Category.create!(name: "Medieval")
+category3 = Category.create!(name: "Fantasy")
+category4 = Category.create!(name: "Sexy")
+category5 = Category.create!(name: "Mens")
+category6 = Category.create!(name: "Womens")
+category7 = Category.create!(name: "Misc.")
+category8 = Category.create!(name: "Light")
+category9 = Category.create!(name: "Medium")
+category10 = Category.create!(name: "Heavy")
+category11 = Category.create!(name: "Plate")
+category12 = Category.create!(name: "Chain")
+category13 = Category.create!(name: "Leather")
+category14 = Category.create!(name: "Roman")
+category15 = Category.create!(name: "Modern")
+category16 = Category.create!(name: "Anti-Ballistic")
+category17 = Category.create!(name: "Metallic")
+category18 = Category.create!(name: "Electronic")
+category19 = Category.create!(name: "Exoskeleton")
+category20 = Category.create!(name: "Mech")
+category21 = Category.create!(name: "Cloth")
+category22 = Category.create!(name: "Plastic")
+category23 = Category.create!(name: "Wood")
 
-user1 = User.create(
+user1 = User.create!(
   username:"Day Man",
   full_name:"Charlie Kelly",
   email:"kelly.charlie@gmail.com",
@@ -45,7 +43,7 @@ user1 = User.create(
   user_image: File.open(File.join(Rails.root, '/db/images/user_images/helios.jpg'))
 )
 
-user2 = User.create(
+user2 = User.create!(
   username:"xX_NiKe22_Xx",
   full_name:"Jimithon Slim",
   email:"xXslimjim22Xx@gmail.com",
@@ -54,7 +52,7 @@ user2 = User.create(
   user_image: File.open(File.join(Rails.root, '/db/images/user_images/jimithon.jpg'))
 )
 
-user3 = User.create(
+user3 = User.create!(
   username:"pass_secret_af",
   full_name:"Adamion Rodriguez",
   email:"adami@gmail.com",
@@ -63,7 +61,7 @@ user3 = User.create(
   user_image: File.open(File.join(Rails.root, '/db/images/user_images/adamion.jpg'))
 )
 
-item1 = Item.create(
+item1 = Item.create!(
   name: "Mjolnir Mk. IV",
   user_id: 1,
   cost: 490000,
@@ -80,7 +78,7 @@ item1.categories << category17
 item1.categories << category18
 item1.categories << category19
 
-item2 = Item.create(
+item2 = Item.create!(
   name: "Gold Plated Armor",
   user_id: 2,
   cost: 64200.95,
@@ -95,7 +93,7 @@ item2.categories << category10
 item2.categories << category11
 item2.categories << category17
 
-item3 = Item.create(
+item3 = Item.create!(
   name: "Storm Trooper Armor",
   user_id: 3,
   cost: 19.77,
@@ -111,7 +109,7 @@ item3.categories << category18
 item3.categories << category22
 item3.categories << category21
 
-item4 = Item.create(
+item4 = Item.create!(
   name: "Brazilian Paper Armor",
   user_id: 2,
   cost: 549.99,
@@ -134,7 +132,7 @@ item4.categories << category11
 item4.categories << category16
 
 
-item5 = Item.create(
+item5 = Item.create!(
   name: "Titan Fall Mech",
   user_id: 1,
   cost: 2499000,

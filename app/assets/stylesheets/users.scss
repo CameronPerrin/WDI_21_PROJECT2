@@ -252,3 +252,27 @@
   justify-content: center;
   flex-direction: column;
 }
+.user-title{
+  width: 200px;
+  height: 40px;
+  font-size: 35px;
+  background-color: #3F56FF;
+  color: #F2F2F2;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.user-image-index{
+  background-color: lighten(blue, 20%);
+  margin: 30px 0 0 0;
+  border: 6px solid #051561;
+  box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.2);
+  p{
+    color:white;
+  }
+  &:hover{
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.2);
+  }
+}

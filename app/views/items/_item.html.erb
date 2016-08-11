@@ -1,5 +1,38 @@
-<h2><%= item.name %></h2>
-<h2><%= item.description %></h2>
-<h2><%= image_tag item.item_image.url %></h2>
-<h2><%= item.user.username %></h2>
-<h2><%= link_to 'Show', item %></h2>
+<%= link_to new_item_path do %>
+  <div class="new-item">
+    Sell Your Armor
+  </div>
+<% end %>
+<div class="search-box">
+  <input name="filter" placeholder="search" class="search-items">
+</div>
+
+<div class="row all-item-box">
+
+
+  
+    <div class="medium-6 large-4 columns">
+      <div class="panel items">
+        <div class="item-name"><%= item.name %></div>
+        <div class="item-description"><%= item.description %></div>
+        <% if current_user == item.user %>
+          <div class="item-options">
+            <%= link_to 'Edit', edit_item_path(item) %>
+            <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are   you sure?' } %>
+          </div>
+        <% end %>
+          <%= link_to item do %>
+            <% if !item.item_image.blank? %>
+              <%= image_tag item.item_image.thumb.url %>
+            <% else %>
+              <p class="no-image">no image available</p>
+            <% end %>
+          <% end %>
+        <br>
+        <div class="item-categories">
+          <%= render item.categories %>
+        </div>
+      </div>
+    </div>
+
+</div>

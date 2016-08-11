@@ -47,6 +47,7 @@
     justify-content: center;
     flex-direction: column;
     background-color: #1735C2;
+    overflow-y: hidden;
   }
   .item-options{
     position: absolute;
@@ -78,6 +79,15 @@
   margin: 20px 0 0 20px;
   text-align: center;
   position: absolute;
+  @media screen and (max-width: 750px) {
+    height: 70%;
+  }
+  @media screen and (max-width: 535px) {
+    width: 90%;
+    right: 50%;
+    margin-right: -45%; 
+    top: 460px;
+  }
   img{
     max-height: 100%;
     max-width: 100%;
@@ -88,17 +98,28 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    max-width: 100%;
     text-align: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    @media screen and (max-width: 630px) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      width: 100%;
+    }
     p{
       font-size: 200%;
       color: #F2F2F2;
       margin: 0 0 0 15px;
       padding: 0 10px 0 15px;
+      @media screen and (max-width: 630px) {
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+        text-align: center;
+      }
     }
     div{
       position: absolute;
@@ -109,6 +130,9 @@
       height: 8px;
       width: 8px;
       background-color: #3F56C3;
+      @media screen and (max-width: 630px) {
+        display: none;
+      }
     }
   }
 }
@@ -120,6 +144,18 @@
   position: absolute;
   margin: 20px 20px 0 0;
   right: 0;
+  @media screen and (max-width: 670px) {
+    width: 57%;
+  }
+  @media screen and (max-width: 530px) {
+    width: 55%;
+  }
+  @media screen and (max-width: 535px) {
+    width: 90%;
+    right: 50%;
+    margin-right: -45%;
+    height: 50%;
+  }
   .item-name-show{
     width: 100%;
     height: 50px;
@@ -130,12 +166,16 @@
     background-color: #1735C2;
     font-size: 35px;
     font-weight: 700;
+
   }
   .item-description-show{
     font-size: 19px;
     margin: 0 5%;
     overflow-x: auto;
     max-height: 85%;
+    @media screen and (max-width: 670px) {
+      max-height: 78%;
+    }
   }
   .item-categories-show{
     position: absolute;
@@ -160,6 +200,17 @@
   color: #F2F2F2;
   font-size: 30px;
   box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.2);
+  @media screen and (max-width: 750px) {
+    right: 64%;
+    width: 33%;
+  }
+  @media screen and (max-width: 535px) {
+    top: 1050px;
+    right: 62%;
+  }
+  @media screen and (max-width: 385px) {
+    font-size: 20px;
+  }
   &:hover{
     background-color: #3F56FF;
     box-shadow: 12px 12px 0px 0px rgba(0,0,0,0.2);
@@ -175,11 +226,11 @@
 
 .cart-add{
   height: 10%;
-  width: 30%;
+  width: 22%;
   background-color: #1735C2;
   position: absolute;
   bottom: 30px;
-  right: 10.5%;
+  right: 18%;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -187,6 +238,20 @@
   color: #F2F2F2;
   font-size: 30px;
   box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.2);
+  @media screen and (max-width: 750px) {
+    right: 20%;
+    width: 40%;
+  }
+  @media screen and (max-width: 680px) {
+    width: 30%;
+    right: 30%;
+  }
+  @media screen and (max-width: 535px) {
+    top: 1050px;
+  }
+  @media screen and (max-width: 385px) {
+    font-size: 20px;
+  }
   &:hover{
     background-color: #3F56FF;
     box-shadow: 12px 12px 0px 0px rgba(0,0,0,0.2);
@@ -207,6 +272,17 @@
   border: 4px solid #051561;
   box-shadow: 8px 8px 0px 0px rgba(0,0,0,0.2);
   border-radius: 100%;
+  @media screen and (max-width: 535px) {
+    top: 1050px;
+  }
+  @media screen and (max-width: 465px) {
+    height: 90px;
+    width: 90px;
+  }
+  @media screen and (max-width: 385px) {
+    right: 0;
+  }
+
 }
 
 .search-items{
@@ -282,8 +358,4 @@
   font-family: montserrat alternates;
   color: white;
   padding: 10px 0 15px 0;
-}
-
-.make-armor-category{
-
 }

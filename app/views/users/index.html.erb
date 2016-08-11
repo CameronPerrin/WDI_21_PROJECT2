@@ -1,18 +1,21 @@
-<h1>Users</h1>
+<h1 class="user-title">Users</h1>
+
+<div class="row">
 <% @users.each do |user| %>
+  <div class="large-4 medium-6 columns center text-center">
   <% if !user.user_image.blank? %>
     <%= link_to user do %>
-      <%= image_tag user.user_image.url %>
+      <%= image_tag user.user_image.detail.url, class: "user-image-index" %>
     <% end %>
   <% else %>
     <%= link_to user do %>
-      <div class="no-user-image">
+      <div class="user-image-index">
         <p>This user has not uploaded an image</p>
       </div>
     <% end %>
   <% end %>
 
-  <div class="full-name">
+<!--   <div class="full-name">
     <%= user.full_name %>
   </div>
 
@@ -23,7 +26,7 @@
   <div class="username">
     <%= user.username %>
   </div>
-
-  <%= user.created_at.strftime("%d %b. %Y") %>
-
+ -->
+ </div>
 <% end %>
+</div>

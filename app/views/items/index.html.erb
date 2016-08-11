@@ -23,7 +23,7 @@
         <% end %>
           <%= link_to item do %>
             <% if !item.item_image.blank? %>
-              <%= image_tag item.item_image.url %>
+              <%= image_tag item.item_image.thumb.url %>
             <% else %>
               <p class="no-image">no image available</p>
             <% end %>

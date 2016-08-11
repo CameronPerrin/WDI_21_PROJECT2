@@ -38,3 +38,16 @@
     left: -4px;
   }
 }
+
+.category-show-title{
+  color: #F2F2F2;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 10px;
+  @media screen and (max-width: 710px) {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 570px) {
+    font-size: 16px;
+  }
+}

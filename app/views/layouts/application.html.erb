@@ -1,7 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Arkea</title>
+    <title>
+      Arkea | 
+<% current_uri = request.env['PATH_INFO'] %>
+<% if current_uri == categories_path %>
+  categories
+<% elsif current_uri == static_pages_home_path %>
+  welcome
+<% elsif current_uri == static_pages_cart_path %>
+  cart
+<% elsif current_uri == new_user_session_path %>
+  sign in
+<% elsif current_uri == new_user_registration_path %>
+  sign up
+<% elsif current_uri == edit_user_registration_path %>
+  edit account
+<% elsif current_uri == items_path %>
+  armor
+<% elsif current_uri == new_item_path %>
+  sell armor
+<% elsif current_uri == carts_path %>
+  cart
+<% elsif current_uri == root_path %>
+  welcome
+<% elsif current_uri == users_path %>
+  users
+<% elsif current_uri == user_path %>
+  user show
+<% else %>
+
+<% end %>
+</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -10,6 +40,7 @@
     <!-- montserrat -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= favicon_link_tag 'favicon.ico' %>
   </head>
   <body>
 

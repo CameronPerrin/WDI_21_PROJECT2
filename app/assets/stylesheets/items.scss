@@ -340,6 +340,7 @@
 .make-armor-description{
   width: 80%;
   margin: 20px 0 0 10%;
+  height: 150px;
 }
 
 .make-armor-cost{
@@ -358,4 +359,17 @@
   font-family: montserrat alternates;
   color: white;
   padding: 10px 0 15px 0;
+}
+
+.armor-category{
+  width: 40%;
+  position:relative;
+  left: 50%;
+  margin-left: -20%;
+  @media screen and (max-width: 580px) {
+    margin-left: -25%;
+  }
+  @media screen and (max-width: 460px) {
+    margin-left: -30%;
+  }
 }

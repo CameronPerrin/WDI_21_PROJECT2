@@ -10,13 +10,13 @@
   width: 30%;
   @media screen and (max-width: 800px) {
     width: 60%;
-    margin: 0 0 0 -30%;
+    margin: 15px 0 0 -30%;
     position: absolute;
     left: 50%;
   }
   @media screen and (max-width: 600px) {
     width: 80%;
-    margin: 0 0 0 -40%;
+    margin: 15px 0 0 -40%;
   }
 }
 

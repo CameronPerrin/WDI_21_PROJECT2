@@ -96,7 +96,7 @@ item2.categories << category11
 item2.categories << category17
 
 item3 = Item.create(
-  name: "Storm Troop Armor",
+  name: "Storm Trooper Armor",
   user_id: 3,
   cost: 19.77,
   item_image: File.open(File.join(Rails.root, '/db/images/item_images/storm-trooper.png')),
@@ -110,3 +110,45 @@ item3.categories << category11
 item3.categories << category18
 item3.categories << category22
 item3.categories << category21
+
+item4 = Item.create(
+  name: "Brazilian Paper Armor",
+  user_id: 2,
+  cost: 549.99,
+  item_image: File.open(File.join(Rails.root, '/db/images/item_images/paper-armor.png')),
+  description: "This extravagant armor is only for the bold. Only meant for the best of warriors. In and out of battle this armor is stylish yet effective as long as you aren't be hit. The paper is made from fine brazillian wood that has been dryed cured and pressed using hand crank wheels for complete authenticity. This tear resistant paper is the same paper used by the ancient egyptians for writing and battle.* For only 549.99 USD this suit can be yours in no time.
+
+
+
+
+    *this is not fact and is open to interpretation",
+)
+
+item4.categories << category2
+item4.categories << category4
+item4.categories << category5
+item4.categories << category6
+item4.categories << category7
+item4.categories << category8
+item4.categories << category11
+item4.categories << category16
+
+
+item5 = Item.create(
+  name: "Titan Fall Mech",
+  user_id: 1,
+  cost: 2499000,
+  item_image: File.open(File.join(Rails.root, '/db/images/item_images/titanfall-mech.png')),
+  description: "Owners can enter a Titan from the front, from behind, and from above. Depending on the owner's position, the owner will either be picked up by the Titan and placed in the safety of the cockpit or enter the Titan through a hatch. owners see the outside world through a segmented display and can exit or eject from the Titan at any time. When the owner is absent from the cockpit, Titans are presided over by an AI and can be set to either follow the owner or guard a position, engaging enemy targets automatically. Titans are able to wield a multitude of weaponry and possess the ability to dash, sprint, and sidestep. Titans are also capable of melee attacking without the use of a special weapon and can rip the owner out of doomed Titans. After taking enough damage, the Titan will be doomed. Before his Titan is destroyed, the owner has the option to pull an eject lever. Owners will then have to wait another few minutes before buyin another one.",
+)
+
+item5.categories << category1
+item5.categories << category5
+item5.categories << category6
+item5.categories << category10
+item5.categories << category16
+item5.categories << category17
+item5.categories << category18
+item5.categories << category19
+item5.categories << category20
+

@@ -28,9 +28,15 @@
      <%= f.number_field :cost, :step => 'any', placeholder: "Armor Price", class: "make-armor-cost" %>
   </div>
 
-  <fieldset class="make-armor-category">
-      <%= collection_check_boxes(:item, :category_ids, Category.all, :id, :name) %>
-  </fieldset>
+  <div class="field armor-category">
+   <select class="js-example-basic-multiple" multiple="multiple" name="item[category_ids][]" id="category_id">
+     <% Category.all.each do |x| %>
+       <option value="<%= x.id %>">
+         <%= x.name %>
+       </option>
+     <% end %>
+   </select>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

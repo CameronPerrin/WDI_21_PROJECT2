@@ -132,6 +132,7 @@ $(document).on('turbolinks:load', function() {
 
   });
 
+  $(".js-example-basic-multiple").select2();
 
 
 
